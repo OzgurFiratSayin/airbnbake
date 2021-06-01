@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Order.destroy_all
 Cake.destroy_all
 User.destroy_all
 emma = User.create(
@@ -36,4 +37,23 @@ end
     )
   puts "cake created"
 end
+
+10.times do
+  puts 'creating orders'
+  Order.create!(
+    order_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+    user_id: User.all.sample.id,
+    cake_id: Cake.all.sample.id
+    )
+end
+
+10.times do
+  puts 'creating orders'
+  Order.create!(
+    order_date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+    user_id: emma.id,
+    cake_id: Cake.all.sample.id
+    )
+end
+
 

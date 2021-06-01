@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Your Dashboard</h1>
+
+  <h2>Your Order List</h2>
+  <% @orders.each do |order| %>
+  <ul>
+    <li>
+      Order ID: <%= order.id %> - Created at: <%= order.created_at %> - Cake Name: <%= order.cake.name %> - Total: GBP <%= order.cake.price %>
+    </li>
+  </ul>
+  <% end %>
+  <h2>The cakes you sell</h2>
+  <% @cakes.each do |cake| %>
+  <%=  %>
+  <ul>
+    <li>
+      <%= link_to user.cake.name, cake_path(cake) %> -  Edit btn - delete btn
+    </li>
+  </ul>
+  <% end %>
+</div>
