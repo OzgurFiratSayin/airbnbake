@@ -1,5 +1,5 @@
 <h1>Here are all the cakes</h1>
 
 <% @cakes.each do |cake| %>
-  <%= link_to cake.name, cake_path(cake) %> | <%= cake.price %> | cake.description | <%= cake.size %>
+  <%= link_to cake.name, cake_path(cake) %> | <%= cake.price %> | <%= cake.description %> | <%= cake.size %>
 <% end %>
