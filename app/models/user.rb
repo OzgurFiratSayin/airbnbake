@@ -4,7 +4,6 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :cakes, dependent: :destroy # !
   has_many :orders
-  has_many :cakes, through: :orders # not sure
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :address, presence: true, length: { minimum: 6 }
