@@ -5,3 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Cake.destroy_all
+User.destroy_all
+10.times do
+  puts "creating user"
+  User.create!(
+    email: Faker::Internet.email,
+    password: 'Abc1234.',
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    address: Faker::Address.full_address
+    )
+  puts "user created"
+end
+50.times do
+  puts 'creating cake'
+  Cake.create!(
+    name: Faker::Food.fruits,
+    price: rand(1..10).to_s,
+    description: Faker::Lorem.paragraph,
+    size: "#{rand(15..35)}cm",
+    user_id: User.all.sample.id
+    )
+  puts "cake created"
+end

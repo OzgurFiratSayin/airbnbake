@@ -1,0 +1,8 @@
+<h1> Create a New Cake </h1>
+<%= simple_form_for (@cake) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.input :size %>
+  <%= f.submit "Create Cake", class: "btn btn-primary" %>
+<% end %>
