@@ -1,0 +1,7 @@
+<%= simple_form_for (@cake) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.input :size %>
+  <%= f.submit "Submit the changes", class: "btn btn-primary" %>
+<% end %>
