@@ -13,7 +13,7 @@ class CakesController < ApplicationController
   end
 
   def edit
-    @flat = Cake.find(params[:id])
+    @cake = Cake.find(params[:id])
   end
 
   def update
