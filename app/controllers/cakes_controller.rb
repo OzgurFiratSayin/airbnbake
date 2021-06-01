@@ -18,9 +18,13 @@ class CakesController < ApplicationController
   end
 
   def edit
+    @cake = Cake.find(params[:id])
   end
 
   def update
+    @cake = Cake.find(params[:id])
+    @cake.update(cake_params)
+    redirect_to cake_path(@cake)
   end
 
   def destroy
