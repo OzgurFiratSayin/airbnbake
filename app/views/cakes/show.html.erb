@@ -6,5 +6,5 @@
   <p><%= @cake.description %></p>
   <h3>£<%= @cake.price %></h3>
   <%= link_to "Home", root_path %>
-  <%= link_to "Order", root_path %>
+  <%= link_to "Order", new_cake_order_path(cake_id = @cake.id) %>
 </div>
