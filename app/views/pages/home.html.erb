@@ -1,6 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= content_for(:navbar_home, "navbar-home") %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1559553156-2e97137af16f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2773&q=80);">
+  <div class="container">
+  <div class="container">
+    <h1>If there’s a cake for every ocasion,
+we’ve got it.</h1>
+    <a class="btn btn-flat" href="#">Order now</a>
 
 <%= link_to 'Sign up',  new_user_registration_path, :class => "btn btn-success"%>
 
 <%= link_to 'Sign in',  new_user_session_path, :class => "btn btn-primary"%>
+  </div>
+</div>

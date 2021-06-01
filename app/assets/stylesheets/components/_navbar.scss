@@ -1,8 +1,12 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  // background-color: white;
 }
 
+.navbar-home{
+  position: absolute;
+  width: 100%;
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
