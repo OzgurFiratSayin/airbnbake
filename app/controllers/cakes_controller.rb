@@ -13,6 +13,7 @@ class CakesController < ApplicationController
 
   def create
     @cake = Cake.new(cake_params)
+    @cake.user = current_user
     @cake.save
     redirect_to cake_path(@cake)
   end

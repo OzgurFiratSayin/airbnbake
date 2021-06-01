@@ -7,6 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Cake.destroy_all
 User.destroy_all
+emma = User.create(
+  email:'emma@abc.com',
+  password: 'Abc1234.',
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  address: Faker::Address.full_address
+  )
 10.times do
   puts "creating user"
   User.create!(
@@ -29,3 +36,4 @@ end
     )
   puts "cake created"
 end
+
