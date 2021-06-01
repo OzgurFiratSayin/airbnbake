@@ -1,5 +1,6 @@
 class CakesController < ApplicationController
   def index
+    @cakes = Cake.all
   end
 
   def show
@@ -7,9 +8,13 @@ class CakesController < ApplicationController
   end
 
   def new
+    @cake = Cake.new
   end
 
   def create
+    @cake = Cake.new(cake_params)
+    @cake.save
+    redirect_to cake_path(@cake)
   end
 
   def edit
