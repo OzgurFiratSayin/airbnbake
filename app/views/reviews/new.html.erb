@@ -1,0 +1,9 @@
+<div class="container mt-3">
+  <h1> Leave a review </h1>
+  <%= simple_form_for [@order, @review], url: cake_order_reviews_path do |f| %>
+    <%= f.input :content %>
+    <%= f.label :rating %>
+    <%= f.select :rating, 0..10 %>
+    <%= f.submit "Submit your review", class: "btn btn-primary" %>
+  <% end %>
+</div>
