@@ -4,6 +4,7 @@ class CakesController < ApplicationController
   end
 
   def show
+    @cake = Cake.find(params[:id])
   end
 
   def new
@@ -28,6 +29,6 @@ class CakesController < ApplicationController
   private
 
   def cake_params
-  params.require(:cake).permit(:name, :price, :description, :size)
+    params.require(:cake).permit(:name, :description, :price, :size, photos: [])
   end
 end
