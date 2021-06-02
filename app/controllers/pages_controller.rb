@@ -5,11 +5,11 @@ class PagesController < ApplicationController
 
   def search
     @cakes = Cake.all
-    if params[:search].blank?
+    if params[:search]["search"].blank?
       render :home
     else
       # @parameter = params[:search]
-      @results = Cake.where("name ILIKE ?", params[:search])
+      @results = Cake.where("name ILIKE ?", "%#{params[:search]["search"]}%")
     end
   end
 end
