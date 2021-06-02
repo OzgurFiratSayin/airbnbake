@@ -1,10 +1,38 @@
 <div class="container">
-  <h1><%= @cake.name %></h1>
-  <% @cake.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-  <p><%= @cake.description %></p>
-  <h3>£<%= @cake.price %></h3>
-  <%= link_to "Home", root_path %>
-  <%= link_to "Order", new_cake_order_path(cake_id = @cake.id) %>
+  <div class="container">
+    <h1><%= @cake.name %></h1>
+    <% @cake.photos.each do |photo| %>
+    <div class="cake-info d-flex flex-column">
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: 'cake-photo' %>
+      <% end %>
+      <div class="cake-info">
+        <p><%= @cake.description %></p>
+        <p>Size:<%= @cake.size%></p>
+
+        <h3>Reviews:</h3>
+        <div class="card-product">
+
+        <% unless @cake.reviews.last.nil? %>
+          <% @cake.reviews.each do |review| %>
+            <% review.rating.times do |star| %>
+              ⭐️
+            <% end %>
+            <div>
+              <p><%= review.content %></p>
+              <p>By: <%= review.user.first_name.capitalize %></p>
+            </div>
+          <% end %>
+        <% end %>
+        </div>
+
+        <div class="cake-price mt-3">
+          <h3>£<%= @cake.price %></h3>
+        </div>
+        <div class="">
+          <%= link_to "Back", cakes_path, class: 'btn-order d-inline-block' %>
+          <%= link_to "Order", new_cake_order_path(cake_id = @cake.id), class: 'btn-order d-inline-block' %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

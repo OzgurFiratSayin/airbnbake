@@ -1,0 +1,27 @@
+.cake-img {
+  height: 180px;
+  width: 180px;
+}
+.card {
+  width: 260px;
+  height: 340px;
+  color: white;
+  background-color: rgba(4, 41, 79, 0.8);
+  margin: 2px;
+}
+.cake-price{
+  position: absolute;
+  bottom: 0px;
+  right: 12px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.card-product {
+  padding: 8px;
+  overflow: hidden;
+  min-height: 120px;
+  background: white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  // display: flex;
+  align-items: center;
+}

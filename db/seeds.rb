@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 Review.destroy_all
 Order.destroy_all
 Cake.destroy_all
@@ -27,15 +28,15 @@ emma = User.create(
     )
   puts "user created"
 end
+
 for i in 1..25 do
   puts 'creating cake'
-  Cake.create!(
+  cake = Cake.create!(
     name: Faker::Food.fruits,
     price: rand(1..10).to_s,
     description: Faker::Lorem.paragraph,
     size: "#{rand(15..35)}cm",
-    user_id: User.all.sample.id
-    ).photos.attach(io: File.open("app/assets/images/seed_images/cakes/cake#{i}.jpg"), filename: "cake#{i}.jpg")
+    user_id: User.all.sample.id).photos.attach(io: File.open("app/assets/images/seed_images/cakes/cake#{i}.jpg"), filename: "cake#{i}.jpg")
   puts "cake created"
 end
 

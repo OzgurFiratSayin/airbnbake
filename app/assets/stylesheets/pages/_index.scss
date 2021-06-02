@@ -1,2 +1,11 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "show";
+h3 a {
+  color: rgb(255, 180, 0);
+}
+h1 {
+  text-align: center;
+  color: rgb(240, 78, 35);
+  font-family: 'Roboto', sans-serif;
+}

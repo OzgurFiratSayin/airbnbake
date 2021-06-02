@@ -3,7 +3,7 @@
   <%= simple_form_for [@order, @review] do |f| %>
     <%= f.input :content %>
     <%= f.label :rating %>
-    <%= f.select :rating, 0..10 %>
+    <%= f.select :rating, 0..5 %>
     <%= f.submit "Submit your review", class: "btn btn-primary" %>
   <% end %>
 </div>
