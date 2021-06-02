@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.cake = @cake
     if @order.save
-      redirect_to cake_path(@cake)
+      redirect_to dashboard_path
     else
       render :new
     end

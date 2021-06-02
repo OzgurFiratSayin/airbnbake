@@ -1,7 +1,7 @@
 <div class="container mt-3">
   <h1> Place your order </h1>
   <%= simple_form_for [@cake, @order] do |f| %>
-    <%= f.input :order_date %>
+    <%= f.input :order_date, html5: true %>
     <%= f.submit "Submit your order", class: "btn btn-primary" %>
   <% end %>
 </div>
