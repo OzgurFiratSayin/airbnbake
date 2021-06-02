@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get '/dashboard', to: 'users#dashboard', as: :dashboard #to show all users cakes/orders
+  get '/search' => 'pages#search', :as => 'search_page'
   resources :cakes do
     resources :orders, only: [:new, :create] do
       resources :reviews, only: [:new,:create]
