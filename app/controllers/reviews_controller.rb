@@ -9,9 +9,8 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user = current_user
     @review.order = @order
-    @cake = Cake.find(params[:cake_id])
     if @review.save
-      redirect_to cake_path(@cake)
+      redirect_to cake_path(@order.cake)
     else
       render :new
     end

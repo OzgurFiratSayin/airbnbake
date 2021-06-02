@@ -6,7 +6,7 @@
   <ul>
     <li>
       Order ID: <%= order.id %> - Created at: <%= order.created_at %> - Cake Name: <%= order.cake.name %> - Total: GBP <%= order.cake.price %>
-    </li>
+      <%= link_to 'Review', new_order_review_path(order) %> </li>
   </ul>
   <% end %>
   <h2>The cakes you sell</h2>

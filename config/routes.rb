@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'users#dashboard', as: :dashboard #to show all users cakes/orders
   get '/search' => 'pages#search', :as => 'search_page'
   resources :cakes do
-    resources :orders, only: [:new, :create] do
-      resources :reviews, only: [:new,:create]
-    end
+    resources :orders, only: [:new, :create]
+  end
+  resources :orders, only: [] do
+    resources :reviews, only: [:new,:create]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
