@@ -12,11 +12,13 @@
         <h3>Reviews:</h3>
         <div class="card-product">
 
-        <% unless @cake.reviews.last.nil? %>
+        <% if @cake.reviews.last.nil? %>
+          <p>Be the first to leave a review!</p>
+        <% else %>
           <% @cake.reviews.each do |review| %>
             <% review.rating.times do |star| %>
               ⭐️
-            <% end %>
+        <% end %>
             <div>
               <p><%= review.content %></p>
               <p>By: <%= review.user.first_name.capitalize %></p>

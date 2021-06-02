@@ -1,0 +1,40 @@
+.shared-links {
+  margin-top: 8px;
+  a {
+    color: rgba(0,0,0,0.3);
+    &:hover {
+      color: rgba(4, 41, 79, 0.8);
+    }
+  }
+}
+
+html, body {
+  height:100%;
+  padding: 0; margin: 0;
+}
+
+.new, body {
+  height:100vh;
+  overflow:hiddden;
+  background: asset-url("flame-1736.png") no-repeat fixed bottom;
+  background-position: 5px 450px;
+  background-size: 40%;
+}
+.form-container {
+  align-items: center;
+  width: 60%;
+  margin: auto;
+  margin-top: 16px;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    h2 {
+      margin-top: 12px;
+      color: rgba(4, 41, 79, 0.8);
+    }
+    h4{
+      margin-top: 12px;
+      color: rgb(240, 78, 35);
+    }
+}
