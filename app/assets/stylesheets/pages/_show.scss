@@ -1,0 +1,30 @@
+.cake-photo{
+  height:500px;
+  width: auto;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+.cake-info {
+  margin: 8px;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.btn-order {
+  border-radius: 20px;
+  background-color: rgb(240, 78, 35);
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+  &:hover {
+    background-color: rgb(240, 78, 35);
+    opacity: 0.6;
+    color: white;
+    }
+}
