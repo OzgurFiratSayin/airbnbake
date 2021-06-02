@@ -1,7 +1,16 @@
-<div class="container mt-3">
-  <h1> Place your order </h1>
-  <%= simple_form_for [@cake, @order] do |f| %>
-    <%= f.input :order_date, html5: true %>
-    <%= f.submit "Submit your order", class: "btn btn-primary" %>
-  <% end %>
+<div class="container-form">
+  <div class="card-form">
+    <h1> Place your order </h1>
+    <div class="form">
+    <div class="cake-info">
+      <h3><%= @cake.name %></h3>
+      <p><%= @cake.description %></p>
+      <p>£ <%= @cake.price %></p>
+    </div>
+      <%= simple_form_for [@cake, @order] do |f| %>
+        <%= f.input :order_date, html5: true %>
+        <%= f.submit "Submit your order", class: "btn-order" %>
+      <% end %>
+    </div>
+  </div>
 </div>
