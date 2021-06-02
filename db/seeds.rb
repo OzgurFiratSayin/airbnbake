@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'open-uri'
 
+Review.destroy_all
 Order.destroy_all
 Cake.destroy_all
 User.destroy_all
@@ -29,19 +29,14 @@ emma = User.create(
   puts "user created"
 end
 
-
-20.times do
+for i in 1..25 do
   puts 'creating cake'
   cake = Cake.create!(
     name: Faker::Food.fruits,
     price: rand(1..10).to_s,
     description: Faker::Lorem.paragraph,
     size: "#{rand(15..35)}cm",
-    user_id: User.all.sample.id
-    )
-
-    file = URI.open('https://kitt.lewagon.com/placeholder/users/random')
-    cake.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+    user_id: User.all.sample.id).photos.attach(io: File.open("app/assets/images/seed_images/cakes/cake#{i}.jpg"), filename: "cake#{i}.jpg")
   puts "cake created"
 end
 
