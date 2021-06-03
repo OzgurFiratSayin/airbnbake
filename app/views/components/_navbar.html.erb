@@ -1,6 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-trasparent navbar-lewagon <%= yield(:navbar_home) %>">
-  <a class="navbar-brand" href="#">
-    <%= image_tag('Frame.png') %>
+  <%= link_to image_tag('Frame.png'), cakes_path, class: 'navbar-brand' %>
 </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -14,8 +13,8 @@
           Hello, <strong><%= current_user.first_name.capitalize %></strong>
         </li>
       <% else %>
-          <%= link_to 'Sign up',  new_user_registration_path, :class => "btn btn-ghost"%>
-          <%= link_to 'Sign in',  new_user_session_path, :class => "btn btn-ghost"%>
+          <%= link_to 'Sign up',  new_user_registration_path, :class => "btn-order"%>
+          <%= link_to 'Sign in',  new_user_session_path, :class => "btn btn-signin"%>
       <% end %>
       <li class="nav-item dropdown">
         <% if user_signed_in? %>

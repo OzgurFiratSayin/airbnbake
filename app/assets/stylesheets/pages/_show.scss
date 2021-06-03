@@ -28,7 +28,6 @@
     color: white;
     }
 }
-
 .container {
   
   #card-user {
@@ -64,4 +63,9 @@
     margin-top: $spacer * 2;
     margin-bottom: $spacer * 3;
   }
+.options{
+  display: flex;
+  width: auto;;
+  justify-content: center;
+  margin-top: 24px;
 }
