@@ -19,19 +19,20 @@ emma = User.create(
   )
 10.times do
   puts "creating user"
+  city = ["Izmir", "Westcliff-On-Sea", "Istanbul", "Sao Paulo", "Etrechy", "Roubaix", "Lille", "London", "Paris", "Durham", "Brighton", "Leigh-On-Sea", "Antalia", "Rio de Janeiro", "Glasgow", "Twickenham", "Manchester", "Galway", "Bristol", "Leeds", "Brussels", "Mitcham", "Ealing"]
   User.create!(
     email: Faker::Internet.email,
     password: 'Abc1234.',
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    address: Faker::Address.full_address
+    address: city.sample
     )
   puts "user created"
 end
 
 for i in 1..24 do
   puts 'creating cake'
-  desc = ["Decadent cake, perfect for every occasions!", "Creamy with a bit of crunch, perfect for work parties.", "Fruity cake.", "Fresh and zingy.", "A chocolate dream.", "Colorful cake with melted white chocolate."]
+  desc = ["Decadent cake, perfect for every occasions! ", "Creamy with a bit of crunch, perfect for work parties. 🥂", "Fruity cake.", "🍋 Fresh and zingy. 🍋", "A chocolate dream.", "Colorful cake with melted white chocolate.", "🥳 Perfect for children's party 🥳", "Rich and nutty! 🌰"]
   cake = Cake.create!(
     name: Faker::Food.fruits,
     price: rand(1..10).to_s,

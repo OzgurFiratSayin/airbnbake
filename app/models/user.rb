@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :orders
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :address, presence: true, length: { minimum: 6 }
+  validates :address, presence: true
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

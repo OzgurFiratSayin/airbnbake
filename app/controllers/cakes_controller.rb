@@ -10,6 +10,7 @@ class CakesController < ApplicationController
 
   def show
     @cake = Cake.find(params[:id])
+    @markers = [{ lat: @cake.user.latitude, lng: @cake.user.longitude }]
   end
 
   def new
