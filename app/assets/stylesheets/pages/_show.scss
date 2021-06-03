@@ -55,7 +55,7 @@
       img {
         height: 100px;
         width: auto;
-        border-radius: 50%
+        border-radius: 50%;
       }
     }
   }
@@ -63,9 +63,11 @@
     margin-top: $spacer * 2;
     margin-bottom: $spacer * 3;
   }
-.options{
+}
+.options {
   display: flex;
-  width: auto;;
+  width: auto;
   justify-content: center;
   margin-top: 24px;
 }
+
