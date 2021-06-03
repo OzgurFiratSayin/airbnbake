@@ -1,61 +1,78 @@
 <div class="container">
   <div class="container">
-    <div class="options">
-    <h1><%= @cake.name %></h1>
-    <% if user_signed_in? %>
-      <% if current_user.id == @cake.user_id %>
-          <%= link_to cake_path(@cake), method: :delete, data:{ confirm: "Are you sure?"}, class: 'btn-trash' do %>
-              <div>
-                <i class="fas fa-trash"></i>
-              </div>
-            <% end %>
-          <%= link_to edit_cake_path(@cake), class: 'btn-trash' do %>
-              <div>
-                <i class="fas fa-edit"></i>
-              </div>
+    <div class="flex-box">
+    <h1><%= @cake.name.upcase %></h1>
+      <div class="flex-box">
+        <% if user_signed_in? %>
+          <% if current_user.id == @cake.user_id %>
+              <%= link_to cake_path(@cake), method: :delete, data:{ confirm: "Are you sure?"}, class: 'btn-trash' do %>
+                  <div>
+                    <i class="fas fa-trash"></i>
+                  </div>
+                <% end %>
+              <%= link_to edit_cake_path(@cake), class: 'btn-trash' do %>
+                  <div>
+                    <i class="fas fa-edit"></i>
+                  </div>
+              <% end %>
           <% end %>
-      <% end %>
-    <% end %>
+        <% end %>
+      </div>
     </div>
-    <div class="cake-info d-flex flex-column">
-    <% @cake.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: 'cake-photo' %>
-      <% end %>
-      <div class="cake-info">
-        <p><%= @cake.description %></p>
-        <p>Size:<%= @cake.size%></p>
+    <div class="d-flex">
+      <div class="">
+        <% @cake.photos.each do |photo| %>
+        <div>
+          <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill, class: 'cake-photo' %>
+            <i class="far fa-heart"></i>
+        </div>
+        <% end %>
+        <div id="map"
+           style="width: 400px; height: 400px;"
+           data-markers="<%= @markers.to_json %>"
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
+      <div class="">
+        <div class="cake-info">
+          <h4>ABOUT THE CAKE</h4>
+          <p><%= @cake.description %></p>
+          <p>Size:<%= @cake.size%></p>
+          <div class="cake-price mt-3">
+          <h3>£<%= @cake.price %></h3>
+        </div>
+        </div>
+        <div class="cake-info">
+          <h4>ALERGENS</h4>
+            <%= image_tag('alergens')%>
+          <p><strong>Please note:</strong> May contain traces of cereals containing gluten, milk, eggs, nuts soya, peanuts and sulphites.</p>
+        </div>
+          <div class="ml-3">
+            <%= link_to "Back", cakes_path, class: 'btn-order d-inline-block' %>
+            <%= link_to "Order", new_cake_order_path(cake_id = @cake.id), class: 'btn-order d-inline-block' %>
+          </div>
+      </div>
+    </div>
+    <div class="">
 
-        <h3>Reviews:</h3>
-        <div class="card-product">
-
+      <h3>Reviews:</h3>
+      <div class="card-product">
         <% if @cake.reviews.last.nil? %>
           <p>Be the first to leave a review!</p>
         <% else %>
           <% @cake.reviews.each do |review| %>
             <% review.rating.times do |star| %>
-              ⭐️
+              <i class="fas fa-star"></i>
         <% end %>
             <div>
               <p><%= review.content %></p>
-              <p>By: <%= review.user.first_name.capitalize %></p>
+              <%#= image_tag review.user.photo %>
+              <p><%= review.user.first_name.capitalize %></p>
+              <hr>
             </div>
           <% end %>
         <% end %>
         </div>
-
-        <div class="cake-price mt-3">
-          <h3>£<%= @cake.price %></h3>
-        </div>
-        <div class="">
-          <%= link_to "Back", cakes_path, class: 'btn-order d-inline-block' %>
-          <%= link_to "Order", new_cake_order_path(cake_id = @cake.id), class: 'btn-order d-inline-block' %>
-        </div>
-      </div>
     </div>
-  </div>
-  <div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
