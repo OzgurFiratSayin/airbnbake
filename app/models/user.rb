@@ -13,6 +13,8 @@ class User < ApplicationRecord
   validate :password_regex
   include PgSearch::Model
   multisearchable against: [:first_name, :last_name]
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   private
 
