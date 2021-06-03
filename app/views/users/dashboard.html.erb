@@ -8,8 +8,12 @@
         <% @orders.each do |order| %>
         <div class="card-order">
           <li>
-            Order ID: <%= order.id %> - Cake Name: <%= order.cake.name %> - Total: GBP <%= order.cake.price %>
-            <%= link_to 'Review', new_order_review_path(order) %>
+            Order ID: <%= order.id %>- Order date: <%= order.order_date %> - Cake Name: <%= order.cake.name %> - Total: GBP <%= order.cake.price %>
+            <% if @user.reviews.any? %>
+              <%=  edit btn %>
+            <% else %>
+               <%= link_to 'Review', new_order_review_path(order) %>
+            <% end %>
           </li>
         </div>
         <% end %>
