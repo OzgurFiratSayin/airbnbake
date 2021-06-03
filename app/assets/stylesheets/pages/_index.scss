@@ -1,6 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "show";
+
 h3 a {
   color: rgb(255, 180, 0);
 }
@@ -8,4 +9,93 @@ h1 {
   text-align: center;
   color: rgb(240, 78, 35);
   font-family: 'Roboto', sans-serif;
+}
+
+.container-main {
+  margin: auto;
+  margin-top: ($spacer * 2);
+  width: 92%;
+
+  h1 {
+    margin: $spacer * 2;
+  }
+}
+
+.container-cards {
+  color: #f4a261;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.card-cake {
+  width: 540px;
+  height: auto;
+  margin: $spacer;
+  background-color: #f5f3f4;
+  font-size: 16px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+
+  .container-img {
+    max-width: 100%;
+    height: 304px;
+    img {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .cake-text {
+    margin: $spacer;
+    align-content: center;
+
+    h3 {
+      margin: 0;
+      color: #ee8733;
+    }
+
+    #cake-info {
+      max-width: 100%;
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 4px;
+      
+      #descr {
+        width: 85%;
+        height: 100%;
+        flex: 0 0 75%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #04294F;
+      }
+
+      p {
+        max-height: 100%;
+        display: flex;
+        margin: 0;
+        color: #04294F;
+        i {
+         margin-right: 4px;
+         color: #04294F;
+         align-self: center;
+        }
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        flex: 0 0 15%;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        color: #04294F;
+      }
+    }
+  }
 }
