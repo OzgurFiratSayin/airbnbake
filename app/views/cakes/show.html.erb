@@ -2,21 +2,23 @@
   <div class="container">
     <div class="options">
     <h1><%= @cake.name %></h1>
-    <%# if current_user.id == @cake.user_id %>
-        <%#= link_to cake_path(@cake), method: :delete, data:{ confirm: "Are you sure?"}, class: 'btn-trash' do %>
-            <div>
-              <i class="fas fa-trash"></i>
-            </div>
-          <%# end %>
-        <%#= link_to edit_cake_path(@cake), class: 'btn-trash' do %>
-            <div>
-              <i class="fas fa-edit"></i>
-            </div>
-        <%# end %>
-    <%# end %>
+    <% if user_signed_in? %>
+      <% if current_user.id == @cake.user_id %>
+          <%= link_to cake_path(@cake), method: :delete, data:{ confirm: "Are you sure?"}, class: 'btn-trash' do %>
+              <div>
+                <i class="fas fa-trash"></i>
+              </div>
+            <% end %>
+          <%= link_to edit_cake_path(@cake), class: 'btn-trash' do %>
+              <div>
+                <i class="fas fa-edit"></i>
+              </div>
+          <% end %>
+      <% end %>
+    <% end %>
     </div>
-    <% @cake.photos.each do |photo| %>
     <div class="cake-info d-flex flex-column">
+    <% @cake.photos.each do |photo| %>
       <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: 'cake-photo' %>
       <% end %>
       <div class="cake-info">
