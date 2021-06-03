@@ -1,12 +1,12 @@
-<div class="container-form">
-  <div class="card-form">
-  <h1> Leave a review </h1>
+<div class="container new">
+  <div class="form-container">
     <div class="form">
+      <h2> Leave a review </h2>
       <%= simple_form_for [@order, @review] do |f| %>
         <%= f.input :content, label: 'How was your cake?' %>
         <%= f.label :rating, label: 'How would you rate it?' %>
         <%= f.select :rating, 0..5 %><br>
-        <%= f.submit "Submit your review", class: "btn-order mt-4" %>
+        <%= f.button :submit, "Submit", class: "btn-order" %>
       <% end %>
     </div>
   </div>
