@@ -10,7 +10,7 @@
           <li>
             Order ID: <%= order.id %>- Order date: <%= order.order_date %> - Cake Name: <%= order.cake.name %> - Total: GBP <%= order.cake.price %>
             <% if @user.reviews.any? %>
-              <%=  edit btn %>
+              <p>edit review</p>
             <% else %>
                <%= link_to 'Review', new_order_review_path(order) %>
             <% end %>

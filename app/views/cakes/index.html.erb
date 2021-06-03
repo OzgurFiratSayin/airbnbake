@@ -4,7 +4,9 @@
     <% @cakes.each do |cake| %>
       <div class="card d-inline-flex align-items-center">
        <h3 class="mt-2"><%= link_to cake.name, cake_path(cake) %></h3>
-       <%= cl_image_tag cake.photos.first.key, class: 'cake-img' %>
+       <% if !cake.photos.nil? %>
+        <%= cl_image_tag cake.photos.first.key, class: 'cake-img' %>
+       <% end %>
        <div class="ml-3 mr-3 mt-2">
         <%= cake.description %>
         <%= cake.size %>
