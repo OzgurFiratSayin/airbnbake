@@ -29,7 +29,7 @@ emma = User.create(
   puts "user created"
 end
 
-for i in 1..25 do
+for i in 1..24 do
   puts 'creating cake'
   cake = Cake.create!(
     name: Faker::Food.fruits,
