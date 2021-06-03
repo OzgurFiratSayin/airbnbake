@@ -7,10 +7,17 @@
 
 }
 .cake-info {
-  margin: 8px;
-  position: relative;
-  margin-right: auto;
-  margin-left: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 200px;
+  width: 100%;
+  margin-left: 16px;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 16px;
+  p {
+    margin-top: 12px;
+  }
 }
 
 .btn-order {
@@ -64,10 +71,25 @@
     margin-bottom: $spacer * 3;
   }
 }
-.options {
+.flex-box {
   display: flex;
   width: auto;
   justify-content: center;
   margin-top: 24px;
 }
 
+.alergy {
+  // margin: 12px;
+  // height: 12px;
+}
+.fa-heart{
+  position: absolute;;
+  color: red;
+    &:hover {
+      opacity: 0.5;
+    }
+}
+
+.fa-star {
+  color: rgb(255, 180, 0);
+}

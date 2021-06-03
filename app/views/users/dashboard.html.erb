@@ -7,18 +7,25 @@
       <ul>
         <% @orders.each do |order| %>
         <div class="card-order">
-          <li>
-            Order ID: <%= order.id %>- Order date: <%= order.order_date %> - Cake Name: <%= order.cake.name %> - Total: GBP <%= order.cake.price %>
+          <div>
+             <h3><%= order.cake.name %></h3>
+             <%#= cl_image_tag order.cake.photo.key, height: 80, width: 80, crop: :fill, class: 'cake-photo' %>
+            <h4>Order date:</h4>
+            <p><%= order.order_date %></p>
+              <h4>Total: </h4>
+              <p>GBP <%= order.cake.price %></p>
             <% if @user.reviews.any? %>
               <p>edit review</p>
             <% else %>
                <%= link_to 'Review', new_order_review_path(order) %>
             <% end %>
-          </li>
+          </div>
         </div>
         <% end %>
       </ul>
     </div>
+  </div>
+  <div class="order-list">
     <div class="cake-list">
       <h2>Your Cakes</h2>
       <ul>
@@ -31,5 +38,6 @@
         <% end %>
       </ul>
     </div>
+
   </div>
 </div>
