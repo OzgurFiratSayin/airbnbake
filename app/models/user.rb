@@ -11,6 +11,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validate :password_regex
+  has_one_attached :photo
 
   private
 
