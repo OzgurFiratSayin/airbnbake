@@ -2,18 +2,18 @@
   <div class="container">
     <div class="options">
     <h1><%= @cake.name %></h1>
-    <% if current_user.id == @cake.user_id %>
-        <%= link_to cake_path(@cake), method: :delete, data:{ confirm: "Are you sure?"}, class: 'btn-trash' do %>
+    <%# if current_user.id == @cake.user_id %>
+        <%#= link_to cake_path(@cake), method: :delete, data:{ confirm: "Are you sure?"}, class: 'btn-trash' do %>
             <div>
               <i class="fas fa-trash"></i>
             </div>
-          <% end %>
-        <%= link_to edit_cake_path(@cake), class: 'btn-trash' do %>
+          <%# end %>
+        <%#= link_to edit_cake_path(@cake), class: 'btn-trash' do %>
             <div>
               <i class="fas fa-edit"></i>
             </div>
-        <% end %>
-    <% end %>
+        <%# end %>
+    <%# end %>
     </div>
     <% @cake.photos.each do |photo| %>
     <div class="cake-info d-flex flex-column">
@@ -50,5 +50,10 @@
         </div>
       </div>
     </div>
+  </div>
+  <div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>

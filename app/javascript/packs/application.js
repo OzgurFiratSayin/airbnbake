@@ -23,6 +23,7 @@ require("channels")
 // ----------------------------------------------------
 
 // External imports
+import { initMapbox } from '../plugins/init_mapbox';
 import "bootstrap";
 
 // Internal imports, e.g:
@@ -32,3 +33,7 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
