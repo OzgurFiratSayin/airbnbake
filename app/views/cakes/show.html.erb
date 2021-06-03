@@ -17,8 +17,8 @@
       <% end %>
     <% end %>
     </div>
-    <% @cake.photos.each do |photo| %>
     <div class="cake-info d-flex flex-column">
+    <% @cake.photos.each do |photo| %>
       <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: 'cake-photo' %>
       <% end %>
       <div class="cake-info">
