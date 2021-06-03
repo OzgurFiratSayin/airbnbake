@@ -1,6 +1,11 @@
 class CakesController < ApplicationController
+  skip_before_action :authenticate_user!, :only => [:index, :show]
   def index
-    @cakes = Cake.all
+    if params[:query].present?
+      @cakes = Cake.search_by_name_description_user(params[:query])
+    else
+      @cakes = Cake.all
+    end
   end
 
   def show

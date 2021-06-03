@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'pg_search', '~> 2.3.0'
 
  # Gems aded on gems-env branch - dotenv is for password/apiKey protection
  gem 'dotenv-rails', groups: [:development, :test]
