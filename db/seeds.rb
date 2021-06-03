@@ -31,12 +31,14 @@ end
 
 for i in 1..24 do
   puts 'creating cake'
+  desc = ["Decadent cake, perfect for every occasions!", "Creamy with a bit of crunch, perfect for work parties.", "Fruity cake.", "Fresh and zingy.", "A chocolate dream.", "Colorful cake with melted white chocolate."]
   cake = Cake.create!(
     name: Faker::Food.fruits,
     price: rand(1..10).to_s,
-    description: Faker::Lorem.paragraph,
+    description: desc.sample,
     size: "#{rand(15..35)}cm",
-    user_id: User.all.sample.id).photos.attach(io: File.open("app/assets/images/seed_images/cakes/cake#{i}.jpg"), filename: "cake#{i}.jpg")
+    user_id: User.all.sample.id)
+  cake.photos.attach(io: File.open("app/assets/images/seed_images/cakes/cake#{i}.jpg"), filename: "cake#{i}.jpg")
   puts "cake created"
 end
 
