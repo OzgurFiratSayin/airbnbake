@@ -11,6 +11,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validate :password_regex
+  has_one_attached :photo
   include PgSearch::Model
   multisearchable against: [:first_name, :last_name]
   geocoded_by :address
