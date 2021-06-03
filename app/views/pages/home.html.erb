@@ -4,11 +4,26 @@
   <div class="d-flex container flex-column align-items-center">
     <h1>If there’s a cake for every ocasion, we’ve got it.</h1>
     <div class="search-form">
-      <%= simple_form_for :search, url: search_page_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-      <%= f.input :search, input_html: {placeholder: "Find the perfect cake"}, class: 'form-style' %>
-      <%= f.submit "Search", class: "btn btn-ghost" %>
-      <% end %>
-    </div>
+      <%#= simple_form_for :cakes, url: search_page_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+      <%#= f.input :search_by_name_description_user, input_html: {placeholder: "Find the perfect cake"}, class: 'form-style' %>
+      <%#= f.submit "Search", class: "btn btn-ghost" %>
+      <%# end %>
+      <div>
+        <%= form_tag cakes_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "search-form",
+            placeholder: "Find your cake"
+          %>
+          <%= button_tag :submit, class: "btn-search" do %>
+           <i class="fas fa-search"></i>
+          <% end %>
+        <% end %>
+        <div class="mt-2">
+        <%= link_to "See all cakes", cakes_path, class: "btn-order" %>
+        </div>
 
+      </div>
+    </div>
   </div>
 </div>

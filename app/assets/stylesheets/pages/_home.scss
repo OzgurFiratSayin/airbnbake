@@ -8,6 +8,7 @@
 
 .banner h1 {
   margin: 0;
+  margin-top: 64px;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
@@ -21,8 +22,41 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 .search-form {
-  margin-top: 64px;
-}
-.form-style {
+  margin-top: 32px;
+  padding: 8px 16px;
   border-radius: 20px;
+  border-style: none;
+  opacity: 1;
+}
+.btn-search{
+  border-style: none;
+  border-radius: 180px;
+  background-color: rgb(255, 180, 0);
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+  &:hover {
+    background-color: rgb(255, 180, 0);
+    opacity: 0.6;
+    color: white;
+    }
+}
+
+.btn-signin {
+  border-radius: 20px;
+  border-color: rgb(255, 180, 0);
+  color: rgb(255, 180, 0);
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+  &:hover {
+    background-color: rgb(255, 180, 0);
+    opacity: 0.6;
+    color: white;
+    }
 }

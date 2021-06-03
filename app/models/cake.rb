@@ -8,4 +8,11 @@ class Cake < ApplicationRecord
   validates :description, presence: true
   validates :size, presence: true
   has_many_attached :photos
+  include PgSearch::Model
+  multisearchable against: [:name, :description]
+  pg_search_scope :search_by_name_description_user,
+    against: [ :name, :description ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
