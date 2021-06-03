@@ -37,6 +37,10 @@ class CakesController < ApplicationController
   end
 
   def destroy
+    @user = User.find(Cake.find(params[:id]).user_id)
+    @cake = Cake.find(params[:id])
+    @cake.destroy if current_user == @cake.user
+    redirect_to cakes_path
   end
 
   private
