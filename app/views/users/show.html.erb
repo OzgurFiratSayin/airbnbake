@@ -20,7 +20,7 @@
       <%= link_to cake_path(cake) do %>
         <div class="card-cake">
           <div class="container-img">
-            <% cl_image_tag cake.photos.first.key, class: 'cake-img' unless cake.photos.nil? %>
+            <%= cl_image_tag cake.photos.first.key, class: 'cake-img' unless cake.photos.nil? %>
           </div>
           <div class="cake-text">
             <h3> <%= cake.name %> </h3>
