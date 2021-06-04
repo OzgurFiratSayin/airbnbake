@@ -16,14 +16,14 @@
   </div>
 
   <div class="container-cards">
-    <% @cakes.each do |cake| %>
+    <% @cakes.reverse.each do |cake| %>
       <%= link_to cake_path(cake) do %>
         <div class="card-cake">
           <div class="container-img">
             <%= cl_image_tag cake.photos.first.key, class: 'cake-img' unless cake.photos.nil? %>
           </div>
           <div class="cake-text">
-            <h3> <%= cake.name %> </h3>
+            <h3> <%= cake.name.capitalize %> </h3>
             <div id="cake-info">
               <div id="descr">
                 </i><%= cake.description %>
