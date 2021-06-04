@@ -1,11 +1,26 @@
 <div class="container-main">
-  <h1>Cakes in AirbnBake</h1>
+  <div id="title-n-form">
+    <h1>Cakes in AirbnBake</h1>
+  
+    <div class="search-form">
+      <%= form_tag cakes_path, :class => "form-area", method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          placeholder: "Find your cake"
+        %>
+        <%= button_tag :submit, class: "btn-search" do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
   <div class="container-cards">
     <% @cakes.each do |cake| %>
       <%= link_to cake_path(cake) do %>
         <div class="card-cake">
           <div class="container-img">
-            <%= cl_image_tag cake.photos.first.key, class: 'cake-img' unless cake.photos.nil? %>
+            <% cl_image_tag cake.photos.first.key, class: 'cake-img' unless cake.photos.nil? %>
           </div>
           <div class="cake-text">
             <h3> <%= cake.name %> </h3>
