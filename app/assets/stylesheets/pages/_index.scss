@@ -72,10 +72,33 @@ h1 {
   .cake-text {
     margin: $spacer;
     align-content: center;
+    
+    .cake-test-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      h3 {
+        padding-right: $spacer;
+        margin: 0;
+        color: #ee8733;
+      }
 
-    h3 {
-      margin: 0;
-      color: #ee8733;
+      i {
+        font-size: 12px;
+      }
+
+      .fa-circle {
+        padding: 0 4px;
+        color: #04294F;
+        font-size: 1px;
+      }
+
+      .text {
+        font-size: 16px;
+        font-weight: bold;
+        color: #04294F;
+        padding-top: 1px;
+      }
     }
 
     #cake-info {
