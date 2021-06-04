@@ -7,7 +7,6 @@
         <% if @user.cakes.blank? %>
           <p>You dont have any order, order your first cake now!</p>
         <% else %>
-        <h2 class="mb-3">Your Order List</h2>
           <% @orders.each do |order| %>
           <div class="card-dash">
              <%= cl_image_tag order.cake.photos.first.key %>
