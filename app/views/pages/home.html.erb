@@ -1,29 +1,26 @@
 <%= content_for(:navbar_home, "navbar-home") %>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1559553156-2e97137af16f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2773&q=80);">
   <div class="container">
-  <div class="d-flex container flex-column align-items-center">
-    <h1>If there’s a cake for every ocasion, we’ve got it.</h1>
+  <div class=" home d-flex container flex-column align-items-center">
+    <h1>You need a cake for every ocasion, we’ve got it.</h1>
+    <p>Join now and have access wherever you are, whenever you need there's a range of delicious cake.</p>
     <div class="search-form">
-      <%#= simple_form_for :cakes, url: search_page_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-      <%#= f.input :search_by_name_description_user, input_html: {placeholder: "Find the perfect cake"}, class: 'form-style' %>
-      <%#= f.submit "Search", class: "btn btn-ghost" %>
-      <%# end %>
       <div>
-        <%= form_tag cakes_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "search-form",
-            placeholder: "Find your cake"
-          %>
+        <div class="search-style">
+          <%= form_tag cakes_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "search-form",
+              placeholder: "Find your cake"
+            %>
           <%= button_tag :submit, class: "btn-search" do %>
            <i class="fas fa-search"></i>
           <% end %>
-        <% end %>
-        <div class="mt-2">
-        <%= link_to "See all cakes", cakes_path, class: "btn-order" %>
         </div>
+        <% end %>
 
       </div>
+    <a href="https://i.redd.it/q11co2bxbfrz.jpg"><h3>Treat yo self! <%= image_tag "slice.png", class: 'favicon'%></h3></a>
     </div>
   </div>
 </div>
