@@ -1,0 +1,13 @@
+<div class="container new">
+  <div class="form-container">
+    <h2>Edit Profile</h2>
+    <%= simple_form_for (@user) do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name%>
+      <%= f.input :address %>
+      <%= f.input :photo, as: :file %>
+      <%= f.button :submit, "Submit", class: "btn-order" %>
+      <%= link_to "Cancel", user_path(@user), class: "btn-trash" %>
+    <% end %>
+  </div>
+</div>

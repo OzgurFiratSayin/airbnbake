@@ -44,7 +44,7 @@
     }
 }
 .container-main {
-  
+
   #card-user {
     width: 50%;
     height: 120px;
@@ -53,6 +53,10 @@
     justify-content: space-between;
     margin: auto;
     margin-top: ($spacer * 2);
+
+    #user-name {
+      font-family: 'Lobster', cursive;
+    }
 
     #user-info {
       padding-right: 0;
