@@ -22,9 +22,8 @@
     <div class="d-flex">
       <div class="">
         <% @cake.photos.each do |photo| %>
-        <div>
-          <%= cl_image_tag photo.key, height: 300, width: 300, crop: :fill, class: 'cake-photo' %>
-            <i class="far fa-heart"></i>
+        <div class="cake-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path photo.key, crop: :fill %>')">
+          <i class="far fa-heart"></i>
         </div>
         <% end %>
         <div id="map"
