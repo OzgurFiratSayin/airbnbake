@@ -12,28 +12,45 @@
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 18px;
   color: white;
-  opacity: .7;
+  opacity: .8;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
-.search-form {
-  margin-top: 32px;
-  padding: 8px 16px;
-  border-radius: 20px;
-  border-style: none;
-  opacity: 1;
+.favicon {
+  height: 24px;
+
 }
+.banner a h3 {
+  color: rgb(255, 180, 0);
+  font-family: 'Lobster', cursive;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+  transition: 0.3s;
+  &:hover {
+    color: white;
+    }
+  margin: 32px;
+  text-align: center;
+
+}
+.search-form {
+    width: 80%;
+    padding: 8px 16px;
+    border-radius: 50px;
+    border-style: none;
+    font-size: 18px;
+}
+
 .btn-search{
   border-style: none;
-  border-radius: 180px;
+  border-radius: 50%;
   background-color: rgb(255, 180, 0);
   color: white;
-  padding: 8px 16px;
+  padding: 8px;
   text-align: center;
   font-size: 16px;
   margin: 4px 2px;
@@ -72,3 +89,13 @@
     opacity: 0.6;
     }
 }
+
+.search-style {
+  width: 540px;
+  display: inline;
+  text-align: center;
+}
+.fa-search{
+  padding: inherit;
+}
+
