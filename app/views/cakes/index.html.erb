@@ -23,7 +23,17 @@
             <%= cl_image_tag cake.photos.first.key, class: 'cake-img' unless cake.photos.nil? %>
           </div>
           <div class="cake-text">
-            <h3> <%= cake.name.capitalize %> </h3>
+            <div class="cake-test-row">
+              <h3> <%= cake.name.capitalize %> </h3>
+              <% if cake.reviews.last%>
+                <% avg = (cake.reviews.to_a.map {|e| e.rating }.sum).to_f / cake.reviews.count %>
+                <% avg.round().times do %>
+                  <i class="fas fa-star"></i>
+                <% end %>
+                <i class="fas fa-circle"></i>
+                <div class="text"> <%= "#{avg.round(2)} / 5" %> </div>
+              <% end %>
+            </div>
             <div id="cake-info">
               <div id="descr">
                 </i><%= cake.description %>
