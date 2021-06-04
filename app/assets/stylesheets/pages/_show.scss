@@ -1,10 +1,18 @@
 .cake-photo{
-  height:500px;
-  width: auto;
+  height: 500px;
+  width: 666px;
   position: relative;
   margin-right: auto;
   margin-left: auto;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: flex-end;
 
+  i {
+    padding: $spacer;
+    font-size: 32px;
+  }
 }
 .cake-info {
   background-color: rgba(255, 255, 255, 0.8);
