@@ -4,6 +4,9 @@
     <div class="col-sm-6">
       <div class="order-list">
         <h2>Your Order List</h2>
+        <% if @user.cakes.blank? %>
+          <p>You dont have any order, order your first cake now!</p>
+        <% else %>
           <% @orders.each do |order| %>
           <div class="card-dash">
              <%= cl_image_tag order.cake.photos.first.key %>
@@ -19,6 +22,7 @@
                <% end %>
              </div>
          </div>
+         <% end %>
          <% end %>
      </div>
    </div>
@@ -37,6 +41,9 @@
    <div class="col-sm-6">
     <div class="cake-list">
       <h2>Your Cakes</h2>
+      <% if @user.cakes.blank? %>
+        <p>You're not selling any cakes at the moment. Add your fist cake!</p>
+      <% else %>
         <% @cakes.each do |cake| %>
         <div class="card-dash">
           <%= cl_image_tag cake.photos.first.key %>
@@ -44,6 +51,7 @@
             <%= link_to cake.name, cake_path(cake) %> -  Edit btn - delete btn
           </div>
         </div>
+      <% end %>
 
         <% end %>
     </div>
