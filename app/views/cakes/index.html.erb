@@ -1,22 +1,25 @@
-<div class="container ">
-  <h1>Find the perfect cake</h1>
-  <div class="container">
+<div class="container-main">
+  <h1>Cakes in AirbnBake</h1>
+  <div class="container-cards">
     <% @cakes.each do |cake| %>
       <%= link_to cake_path(cake) do %>
-        <div class="card d-inline-flex align-items-center">
-           <h3 class="mt-2"><%= cake.name %></h3>
-           <% if !cake.photos.nil? %>
-            <%= cl_image_tag cake.photos.first.key, class: 'cake-img' %>
-           <% end %>
-           <div class="ml-3 mr-3 mt-2">
-            <%= cake.description %>
-            <%= cake.size %>
-           </div>
-           <div class="cake-price">
-            <p>£ <%= cake.price %></p>
-         </div>
+        <div class="card-cake">
+          <div class="container-img">
+            <% cl_image_tag cake.photos.first.key, class: 'cake-img' unless cake.photos.nil? %>
+          </div>
+          <div class="cake-text">
+            <h3> <%= cake.name %> </h3>
+            <div id="cake-info">
+              <div id="descr">
+                </i><%= cake.description %>
+                <P><i class="fas fa-ruler"></i> <%= cake.size %></p>
+              </div>
+              <h2>£ <%= cake.price %></h2>
+            </div>
+          </div>
         </div>
       <% end %>
     <% end %>
   </div>
 </div>
+

@@ -18,3 +18,37 @@
 a:hover {
   text-decoration: none;
   }
+
+  @media (min-width: 100px) and (max-width: 575px) {
+    .card-cake {
+      flex: 0 0 100%;
+    }
+  }
+    
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 576px) {
+    .card-cake {
+      flex: 0 0 100%;
+    }
+  }
+  
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    .card-cake {
+          flex: 0 0 44%;;
+    }
+  }
+  
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    .card-cake {
+          flex: 0 0 44%;;
+    }
+  }
+  
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    .card-cake {
+      flex: 0 0 30%;;
+    }
+  }
