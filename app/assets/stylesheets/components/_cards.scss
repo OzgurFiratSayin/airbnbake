@@ -87,7 +87,43 @@
   width: 100%;
 }
 
+.card-dash {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  width: 74%;
+  margin-bottom:25px;
+  margin-left: 50px;
+}
 
+.card-dash img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-dash h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-dash p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-dash .card-dash-infos {
+  padding: 16px;
+  text-align: left;
+  width: 100%;
+}
 
 
 
