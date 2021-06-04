@@ -12,6 +12,11 @@
       <% else %>
         <%= image_tag "default_avatar.jpg" %>
       <% end %>
+      <%= link_to edit_user_path(@user), class: 'btn-trash' do %>
+        <div>
+          <i class="fas fa-edit"></i>
+        </div>
+      <% end %>
     </div>
   </div>
   <h1>Cakes available from <%= @user.first_name.capitalize %> </h1>
